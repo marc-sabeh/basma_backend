@@ -17,7 +17,7 @@ class UserController extends Controller
         ->where('email', 'LIKE', '%' .request('email'). '%')
         ->paginate(request('pagination'));
 
-        return response()->json(['Users' => $users]);
+        return response()->json($users);
     }
 
     public function average_of_users(Request $request){
